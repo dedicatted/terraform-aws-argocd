@@ -1,6 +1,6 @@
 # ArgoCD client
 ## Overview
-Terraform module which register destination cluster in ArgoCD and create project, application and application for application in your ArgoCD cluster.
+Terraform module which registers destination cluster in ArgoCD and creates project, application and application for application in your ArgoCD cluster.
 
 ## Usage
 ```hcl

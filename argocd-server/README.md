@@ -13,7 +13,7 @@ module "argocd" {
 }
 ```
 ### Note
-* For use argocd you should install ingress controller and load balancer controller. For this your can follow our eks addons repo and found [this](https://github.com/dedicatted/terraform-aws-eks-addons)
+* To use argocd you should install ingress controller and load balancer controller. For this your can follow our eks addons repo and found [this](https://github.com/dedicatted/terraform-aws-eks-addons)
 
 ## Requirements
 
