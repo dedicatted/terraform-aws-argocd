@@ -14,6 +14,7 @@ module "argocd" {
   project_cluster_list = ["https://kubernetes.default.svc", "your_second_cluster"]
   argocd_repo_name     = "terraform-aws-argocd"
   argocd_password      = "password"
+  github_token         = "token"
 }
 ```
 ## Requirements
