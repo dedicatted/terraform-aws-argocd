@@ -1,4 +1,4 @@
 output "random_string" {
   description = "admin password for argoccd"
-  value       = random_string.random.result
+  value       = random_password.random.result
 }

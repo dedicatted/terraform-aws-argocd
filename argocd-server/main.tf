@@ -1,4 +1,4 @@
-resource "random_string" "random" {
+resource "random_password" "random" {
   length           = 16
   special          = true
   override_special = "-_"
