@@ -7,14 +7,13 @@ A Terraform module to deploy ArgoCD on a Kubernetes Cluster using the [Helm Prov
 ```hcl
 //Configuration to call the module
 module "argocd" {
-  source = "github.com/dedicatted/terraform-aws-argocd/argocd-server"
-  argocd_host = "example.com"
-  acm_certificate_arn = "arn:example_arn"
+source = "github.com/dedicatted/terraform-aws-argocd/argocd-server"
+argocd_host = "example.com"
+acm_certificate_arn = "arn:example_arn"
 }
 ```
 ### Note
 * To use argocd you should install ingress controller and load balancer controller. For this your can follow our eks addons repo and found [this](https://github.com/dedicatted/terraform-aws-eks-addons)
-
 ## Requirements
 
 | Name | Version |
@@ -22,9 +21,8 @@ module "argocd" {
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.47 |
 | <a name="requirement_helm"></a> [helm](#requirement\_helm) | >= 2.6 |
-| <a name="requirement_kubectl"></a> [kubectl](#requirement\_kubectl) | >= 1.7.0 |
-| <a name="requirement_local"></a> [local](#requirement\_local) | >= 2.0.0 |
-| <a name="requirement_time"></a> [time](#requirement\_time) | >= 0.9 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.10 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.4.3 |
 
 ## Providers
 
@@ -32,8 +30,8 @@ module "argocd" {
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.47 |
 | <a name="provider_helm"></a> [helm](#provider\_helm) | >= 2.6 |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | n/a |
-| <a name="provider_random"></a> [random](#provider\_random) | n/a |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | >= 2.10 |
+| <a name="provider_random"></a> [random](#provider\_random) | >= 3.4.3 |
 
 ## Modules
 
@@ -45,7 +43,7 @@ No modules.
 |------|------|
 | [helm_release.argocd](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 | [kubernetes_cluster_role_binding.argocd-cluster-admin-role-binding](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_binding) | resource |
-| [random_string.random](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [random_password.random](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [aws_eks_cluster.eks_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/eks_cluster) | data source |
 | [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
@@ -65,4 +63,4 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_random_string"></a> [random\_string](#output\_random\_string) | admin password for argoccd |
+| <a name="output_random_password"></a> [random\_password](#output\_random\_password) | admin password for argoccd |

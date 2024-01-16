@@ -16,5 +16,5 @@ provider "argocd" {
 }
 provider "github" {
   token = var.github_token
-  owner = "diligend"
+  owner = var.github_owner
 }

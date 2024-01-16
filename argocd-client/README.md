@@ -17,6 +17,11 @@ module "argocd" {
   github_token         = "token"
 }
 ```
+### Note
+* By default this module created file in github repository create init commit to github repository. In case if you want change file owner in repository you should specify parameter:
+```
+github_owner = "organization_name"
+```
 ## Requirements
 
 | Name | Version |
@@ -24,7 +29,7 @@ module "argocd" {
 | <a name="requirement_argocd"></a> [argocd](#requirement\_argocd) | 5.6.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.47 |
 | <a name="requirement_github"></a> [github](#requirement\_github) | ~> 5.0 |
-| <a name="requirement_kubectl"></a> [kubectl](#requirement\_kubectl) | >= 1.7.0 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | >= 2.10 |
 
 ## Providers
 
@@ -33,7 +38,7 @@ module "argocd" {
 | <a name="provider_argocd"></a> [argocd](#provider\_argocd) | 5.6.0 |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.47 |
 | <a name="provider_github"></a> [github](#provider\_github) | ~> 5.0 |
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | n/a |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | >= 2.10 |
 
 ## Modules
 
@@ -73,6 +78,7 @@ No modules.
 | <a name="input_argocd_username"></a> [argocd\_username](#input\_argocd\_username) | Username which used buy argo cd terraform provider to login to argocd | `string` | `"admin"` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | Name of cluster which you add to argocd | `string` | n/a | yes |
 | <a name="input_create"></a> [create](#input\_create) | Variable indicating whether deployment is enabled. | `bool` | `false` | no |
+| <a name="input_github_owner"></a> [github\_owner](#input\_github\_owner) | GitHub owner used to configure the provider | `string` | `""` | no |
 | <a name="input_github_token"></a> [github\_token](#input\_github\_token) | Github token for access to git hub repository | `string` | n/a | yes |
 | <a name="input_project_cluster_list"></a> [project\_cluster\_list](#input\_project\_cluster\_list) | List of cluster which available in new created project | `list(string)` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | AWS Region where deployed eks cluster | `bool` | `"us-east-1"` | no |

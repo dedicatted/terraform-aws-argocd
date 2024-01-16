@@ -66,3 +66,9 @@ variable "argocd_password" {
   description = "Password which used buy argo cd terraform provider to login to argocd"
   type        = string
 }
+
+variable "github_owner" {
+  description = "GitHub owner used to configure the provider"
+  type        = string
+  default     = ""
+}
